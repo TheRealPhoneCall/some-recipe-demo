@@ -1,0 +1,69 @@
+### Environment Variables
+@hostname = http://localhost:9090
+
+### Create Car
+
+POST {{hostname}}/cars
+Content-Type: application/json
+
+{
+    "name": "Navii",
+    "type": "Dual Cab Pickup Truck",
+    "year": 2022,
+    "make": "Nissan Navara",
+    "model": "VE M/T",
+    "desc": "Utility vehicle"
+}
+
+### Retrieve All Cars
+
+GET {{hostname}}/cars
+
+### Retrieve Filtered Cars
+
+GET {{hostname}}/cars
+Content-Type: application/json
+
+{
+    "filterArgs": {
+        "owner._id": "62e7cf855824c2f1e8820372"
+    },
+    "sortArgs": {
+        "createdAt": -1
+    }
+}
+
+### Retrieve one Car
+
+GET {{hostname}}/cars/62e78fcc5824c2f1e8820369
+
+### Update Car
+
+PATCH {{hostname}}/cars/62e78fcc5824c2f1e8820369
+Content-Type: application/json
+
+{
+    "desc": "Utility vehicle updated"
+}
+
+### Delete Car
+
+DELETE {{hostname}}/cars/62e78fcc5824c2f1e8820369
+
+### Get Uploads
+GET {{hostname}}/upload
+
+### Delete File
+DELETE {{hostname}}/upload/62fc9588a26621d24ad7f3d9
+
+### Delete Car Rental Vehicle
+
+DELETE {{hostname}}/services/car-rentals/vehicles/630830b32945205c7cdda0af
+
+
+
+
+
+
+
+
