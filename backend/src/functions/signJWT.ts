@@ -1,7 +1,7 @@
 import jwt, { sign } from 'jsonwebtoken'
 import config from '../config/config'
 import logging from '../config/logging'
-import { IUser } from '../modules/user/model'
+import { IUser } from '../modules/auth/model'
 
 const NAMESPACE = 'Auth'
 

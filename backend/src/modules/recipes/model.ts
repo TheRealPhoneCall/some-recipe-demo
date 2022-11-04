@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose'
 import { IImg } from '../files/model'
-import { IUserMin } from '../user/model'
+import { IUserMin } from '../auth/model'
 
 export interface IRecipeStep {
   step: number;

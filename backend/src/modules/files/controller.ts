@@ -1,32 +1,32 @@
 import { NextFunction, Request, Response } from "express"
 import mongoose from 'mongoose'
 import logging from "../../config/logging"
-import Upload from './model'
+import File from './model'
 import makeRestControllers from '../../factories/rest-controllers'
 import fs from 'fs'
 
-const NAMESPACE = 'Uploads'
+const NAMESPACE = 'Files'
 
 const {
   getDocs,
 } = makeRestControllers({
   namespace: NAMESPACE,
-  docName: 'upload',
-  colName: 'uploads',
-  doc: Upload
+  docName: 'file',
+  colName: 'files',
+  doc: File
 })
 
 const addDoc = async (req: Request, res: Response, next: NextFunction) => {
   const { name, type, uploader, filterType, filterId } = req.body
   console.log(req.file)
-  const newUpload = new Upload({
+  const newFile = new File({
     ...req.payload,
     _id: new mongoose.Types.ObjectId(),
     path: req.file?.path
   })
 
   try {
-    const file = await newUpload.save()
+    const file = await newFile.save()
     return res.status(201).json({
       message: `New ${type} uploaded.`,
       file
@@ -42,7 +42,7 @@ const addDoc = async (req: Request, res: Response, next: NextFunction) => {
 
 const deleteDoc = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const file = await Upload.findById(req.params.id)
+    const file = await File.findById(req.params.id)
     // delete file
     if (file) {
       await fs.unlink(file?.path as string, (error) => {
