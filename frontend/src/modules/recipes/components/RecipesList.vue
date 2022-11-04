@@ -21,6 +21,7 @@ const authStore = useUserAuthStore()
 
 const recipes = ref<IRecipe[]>([])
 const isEmptyState = ref(false)
+
 try {
   let payload
   if (props.favorites) {

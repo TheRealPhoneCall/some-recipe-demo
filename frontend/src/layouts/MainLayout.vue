@@ -80,7 +80,7 @@ console.log('MainLayout', route, route.name)
               v-model="footerTab"
               key="tabs"
               dense
-              class="fit row wrap items-start items-center content-start q-pa-none"
+              class="fit row wrap items-start content-start q-pa-none"
             >
               <q-tab
                 v-for="tab in tabs"

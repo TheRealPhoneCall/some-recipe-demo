@@ -29,7 +29,13 @@ export function useRest () {
     return { method, url, config }
   }
 
-  const runRest = async (method: string, url: string, payload?: any, config?: object) => {
+  const runRest = async (
+    method: string, 
+    url: string, 
+    payload?: any, 
+    config?: object
+  ) => {
+    
     console.log(`running rest: method - ${method} | url- ${url}`)
     console.log('payload: ', payload)
     loading.value = true
