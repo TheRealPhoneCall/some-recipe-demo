@@ -6,7 +6,7 @@ import config from './config/config';
 import userRoutes from './modules/user/route';
 import recipeRoutes from './modules/recipes/route';
 import recipeStepRoutes from './modules/recipe-steps/route';
-import uploadRoutes from './modules/uploads/route';
+import uploadRoutes from './modules/files/route';
 
 const NAMESPACE = 'Server';
 const router = express();

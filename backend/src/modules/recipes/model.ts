@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose'
-import { IImg } from '../uploads/model'
+import { IImg } from '../files/model'
 import { IUserMin } from '../user/model'
 
 export interface IRecipeStep {

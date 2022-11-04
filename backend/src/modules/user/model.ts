@@ -1,5 +1,5 @@
 import mongoose, { Schema } from 'mongoose'
-import { IImg } from '../uploads/model'
+import { IImg } from '../files/model'
 
 export interface IUserMin {
   _id: string;
